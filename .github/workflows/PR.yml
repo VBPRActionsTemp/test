@@ -32,8 +32,10 @@ jobs:
             -H "Accept: application/vnd.github+json" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
             repos/${{ github.repository }}/git/refs \
-            -f ref='refs/heads/{{ github.actor }}' \
+            -f ref='refs/heads/${{ github.actor }}' \
             -f sha="$(gh api repos/${{ github.repository }}/git/ref/heads/main -q '.. | .sha? | select(. != null)')"
+          else
+            echo "Branch ${{ github.actor }} already exists"
           fi
         
 
