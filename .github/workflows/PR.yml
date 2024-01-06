@@ -8,11 +8,11 @@ on:
 
 env:
   GH_TOKEN: ${{ github.token }}
-    
+
 jobs:
   handle-pull-request:
     runs-on: ubuntu-latest
-
+    permissions: write-all
     steps:
       - name: Info
         shell: bash
