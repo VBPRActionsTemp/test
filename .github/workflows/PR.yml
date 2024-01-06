@@ -17,6 +17,7 @@ jobs:
       - name: Info
         shell: bash
         run: |
+          echo 'Repo: ${{ github.repository }}'
           echo 'User: ${{ github.actor }}'
           echo "Base ref: ${{ github.base_ref }}"
           echo "$(gh api /repos/${{ github.repository }} --jq '.default_branch')"
