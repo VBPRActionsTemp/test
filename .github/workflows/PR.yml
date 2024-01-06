@@ -5,7 +5,10 @@ on:
     branches: [ "main" ]
     
   workflow_dispatch:
-  
+
+env:
+  GH_TOKEN: ${{ github.token }}
+    
 jobs:
   handle-pull-request:
     runs-on: ubuntu-latest
